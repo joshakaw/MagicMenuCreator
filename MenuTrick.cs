@@ -45,6 +45,17 @@ namespace MenuTrick
             _totals.Push(resultPrices);
         }
 
+        public void RemoveLastSections()
+        {
+            if (_totals.Count == 0) { return; }
+            _totals.Pop();
+
+            // Soft delete: Since print operation only accesses _prices via
+            // _totals entries, _prices entries will still linger, but they are
+            // not accessed. Adding a section overwrites previous dictionary
+            // entries.
+        }
+
         public void Print()
         {
             T convergantValue = _totals.Peek()[0];
