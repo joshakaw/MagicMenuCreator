@@ -4,16 +4,6 @@
     {
         public static void Main()
         {
-            MenuTrick<decimal> mt = new([1,2,3,4]);
-            mt.AddSections([2,3,4]);
-            mt.AddSections([1,5]);
-            mt.Print();
-            mt.AddSections([3]);
-            mt.Print();
-            mt.RemoveLastSections();
-            mt.Print();
-            return;
-
             Console.Write("How many starting prices? ");
             int number;
             while (!int.TryParse(Console.ReadLine(), out number) || number <= 0)
